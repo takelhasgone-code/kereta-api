@@ -1,0 +1,181 @@
+<form name="form">
+<script>
+    function proses()
+    {
+        var tujuan = document.form.tujuan.value;
+        var kelas = document.form.kelas.value;
+        var jumlah = document.form.jumlah.value;
+        var harga = 0;
+        var total = 0;
+        if(tujuan == "bdg")
+        {
+            if(kelas == "ekonomi") harga = 70000;
+
+        }
+        total = harga * jumlah;
+        document.form.harga.value = harga;
+        document.form.total.value = total;
+
+        var makan = document.form.makan.checked;
+        var jumlah_mkn = document.form.jumlah_mkn.value;
+        var harga_mkn = 0;
+        var total_mkn = document.form.total_mkn.value;
+        if(makan) harga_mkn = 20000;
+        total_mkn = harga_mkn * jumlah_mkn;
+        document.form.harga_mkn.value = harga_mkn;
+        document.form.total_mkn.value = total_mkn;
+
+        var minum = document.form.minum.checked;
+        var jumlah_mnm = document.form.jumlah_mnm.value;
+        var harga_mnm = 0;
+        var total_mnm = document.form.total_mnm.value;
+        if(minum) harga_mnm = 10000;
+        total_mnm = harga_mnm * jumlah_mnm;
+        document.form.harga_mnm.value = harga_mnm;
+        document.form.total_mnm.value = total_mnm;
+
+        var snack = document.form.snack.checked;
+        var jumlah_snck = document.form.jumlah_snck.value;
+        var harga_snck = 0;
+        var total_snck = document.form.total_snck.value;
+        if(snack) harga_snck = 15000;
+        total_snck = harga_snck * jumlah_snck;
+        document.form.harga_snck.value = harga_snck;
+        document.form.total_snck.value = total_snck;
+
+        var total_semua = total + total_mkn + total_mnm + total_snck;
+        document.form.total_semua.value = total_semua;
+        
+    }
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROGRAM TIKET KERETA API</title>
+</head>
+<body>
+    <center>
+        <h1>PROGRAM TIKET KERETA API</h1>
+        <hr>
+        <table bgcolor="cyan">
+            <tr>
+                <td>NAMA PEMESAN</td>
+                <td>:<input type="text" size="10"></td>
+            </tr>
+            <tr>
+                <td>KOTA TUJUAN</td>
+                <td>KELAS</td>
+                <td>JUMLAH</td>
+                <td>HARGA</td>
+                <td>TOTAL</td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="tujuan">
+                        <option value="bdg">BANDUNG</option>
+                        <option value="diy">JAKARTA</option>
+                        <option value="smrg">CIBIRU</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="kelas">
+                        <option value="ekonomi">EKONOMI</option>
+                        <option value="bisnis">BISNIS</option>
+                        <option value="eksekutif">SIGMA</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="jumlah">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+                <td><input name="harga" type="text" size="5"></td>
+                <td><input name="total" type="text" size="5"></td>
+            </tr>
+            <tr>
+                <td>TAMBAHAN</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="makan">MAKAN</td>
+                <td></td>
+                <td>
+                    <select name="jumlah_mkn">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+                <td>
+                    <input name="harga_mkn" type="text" size="5">
+                </td>
+                <td>
+                    <input name="total_mkn" type="text" size="5">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="minum">MINUM</td>
+                <td></td>
+                <td>
+                    <select name="jumlah_mnm">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+                <td>
+                    <input name="harga_mnm" type="text" size="5">
+                </td>
+                <td>
+                    <input name="total_mnm" type="text" size="5">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="snack">SNACK</td>
+                <td></td>
+                <td>
+                    <select name="jumlah_snck">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+                <td>
+                    <input name="harga_snck" type="text" size="5">
+                </td>
+                <td>
+                    <input name="total_snck" type="text" size="5">
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td>TOTAL HARGA</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <input type="text" name="total_semua" size="5">
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <table bgcolor="blue" width="460">
+            <tr><td align="center"><input style="background-color: red; color: white; border-radius: 20px; width: 100px; font-size: 15px; height: 50px;" type="button" value="Proses" onclick="proses()">
+            <input style="background-color: yellow; border-radius: 20px; width: 100px; font-size: 15px; height: 50px;" type="reset" value="Reset"></tr></td>
+        </table>
+    </center>
+</body>
+</html>
+</form>
